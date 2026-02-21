@@ -1,0 +1,15 @@
+# Staging: dev base image (SSH works), Pha KMS is fine
+# Deploy: phala deploy -c docker-compose.staging.yaml
+services:
+  app:
+    image: ghcr.io/amiller/toy-example@sha256:4b53d33db7c05559d777fd5607d2da1d07ba5c65d91fea274801e119358fbd5f
+    ports:
+      - "8080:8080"
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock
+    environment:
+      - PORT=8080
+      - SECRET_VALUE=${SECRET_VALUE}
+
+# Base image: dstack-dev-0.5.x (SSH built-in, phala ssh works)
+# allowed_envs: SECRET_VALUE (non-sensitive config only)

@@ -1,0 +1,8 @@
+deploy_key
+deploy_key.pub
+.env
+node_modules/
+build1.tar
+build2.tar
+build.tar
+__pycache__/

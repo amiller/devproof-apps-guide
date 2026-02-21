@@ -1,0 +1,6 @@
+*.tar
+report.json
+sample-report.json
+build-manifest.json
+HANDOFF-*.md
+.claude/

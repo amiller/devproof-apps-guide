@@ -1,0 +1,12 @@
+# Production: Base KMS (on-chain transparency)
+# Deploy: phala deploy -c docker-compose.prod.yaml --kms base --private-key "$PRIVATE_KEY"
+services:
+  app:
+    image: ghcr.io/amiller/devproof-toy@sha256:0ae3f0936509498d861d852fae233ae42cb6ac191f9548b71fd0022a3ec7c5f0
+    ports:
+      - "8080:8080"
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock
+    environment:
+      - PORT=8080
+      - HOST_KEY=${HOST_KEY}

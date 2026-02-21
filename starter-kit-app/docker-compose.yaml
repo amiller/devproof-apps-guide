@@ -1,0 +1,13 @@
+# Local dev with dstack simulator
+# Run `phala simulator start` first, then `docker compose up`
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/.phala-cloud/simulator/0.5.3/dstack.sock:/var/run/dstack.sock
+    environment:
+      - PORT=8080
+      - SECRET_VALUE=local-dev-secret
+      - HOST_KEY=local-dev-host-key
