@@ -1,0 +1,14 @@
+# Production: Base KMS (on-chain transparency)
+# Deploy: phala deploy -c docker-compose.prod.yaml --kms base --private-key "$PRIVATE_KEY"
+services:
+  app:
+    image: ghcr.io/YOU/my-app@sha256:REPLACE_WITH_DIGEST
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgres://user:pass@host/db
+    volumes:
+      - /var/run/dstack.sock:/var/run/dstack.sock
+      - store-data:/data
+volumes:
+  store-data:

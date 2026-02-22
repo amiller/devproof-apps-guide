@@ -1,6 +1,13 @@
+node_modules/
 *.tar
+*.env
+.env
+deploy_key
+deploy_key.pub
 report.json
 sample-report.json
 build-manifest.json
 HANDOFF-*.md
 .claude/
+APP-VARIANTS.md
+references/
